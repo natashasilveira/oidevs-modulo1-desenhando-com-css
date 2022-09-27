@@ -32,7 +32,6 @@
     .container {
       width: 500px;
       height: 700px;
-      /*overflow: hidden;*/
       background: red;
       position: relative;
     }
@@ -120,11 +119,22 @@
     }
     
 
-    .left, .right {
+    .right {
       background: rgb(226, 198, 161);
       height: 700px;
-      width: 200px;
-      position: relative;
+      width: 100px;
+      position: absolute;
+      top: 0;
+      left: 500px;
+      z-index: 1;
+    }
+
+    .left {
+      background: rgb(226, 198, 161);
+      height: 700px;  
+      width: 100px;
+      position: absolute;
+      left: -100px;
       z-index: 1;
     }
 
@@ -134,13 +144,15 @@
 
 <body>
   
-  <div class="left"></div>
+  
   <div class="container">
+    <div class="left"></div>
     <div class="mountains"><div class="sun"></div></div>
     <div class="ground"></div> 
     <div class="cactus"></div>
+    <div class="right"></div>
   </div>
-  <div class="right"></div>
+  
 
 </body>
 
