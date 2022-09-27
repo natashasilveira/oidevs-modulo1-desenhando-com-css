@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    
+    :root{
+      --sun-color: #e17805;
+      --mountains-color: #9b7147;
+      --ground-color: #d79750;
+      --cactus-color: #324e14;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 700px;
+      background: rgb(226, 198, 161);
+    }
+
+    .container {
+      width: 500px;
+      height: 700px;
+      /*overflow: hidden;*/
+      background: red;
+      position: relative;
+    }
+
+    .sun {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background: var(--sun-color);
+      position: relative;
+      top: 50px;
+      left: 110px;
+      z-index: 0;
+    }
+
+    .mountains {
+      width: 500px;
+      height: 350px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #eff3cd;
+      z-index: 0;
+    }
+
+    .mountains::before {
+      content: "";
+      width: 250px;
+      height: 250px;
+      position: absolute;
+      bottom: -150px;
+      left: -20px;
+      background: var(--mountains-color);
+      border-radius: 55px;
+      transform: rotate(40deg);
+      box-shadow: 120px -100px var(--mountains-color),
+        200px -250px var(--mountains-color);
+      z-index: 1;
+    }
+
+    
+
+    .ground {
+      width: 500px;
+      height: 360px;
+      position: absolute;
+      background-color: var(--ground-color);
+      bottom: 0;
+    }
+
+    .cactus {
+      width: 45px;
+      height: 470px;
+      background: var(--cactus-color);
+      position: relative;
+      top: 30%;
+      left: 60%;
+      border-radius: 24px 12px 0 0;
+      z-index: 2;
+    }
+
+    .cactus::before {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 180px;
+      border: 36px solid var(--cactus-color);
+      border-top: none;
+      border-left: none;
+      border-radius: 30px;
+      top: 11%;
+    }
+
+    .cactus::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 180px;
+      border: 36px solid var(--cactus-color);
+      border-top: none;
+      border-right: none;
+      border-radius: 30px;
+      top: 25%;
+      right: 15%;
+    }
+    
+
+    .left, .right {
+      background: rgb(226, 198, 161);
+      height: 700px;
+      width: 200px;
+      position: relative;
+      z-index: 1;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  
+  <div class="left"></div>
+  <div class="container">
+    <div class="mountains"><div class="sun"></div></div>
+    <div class="ground"></div> 
+    <div class="cactus"></div>
+  </div>
+  <div class="right"></div>
+
+</body>
+
+</html>
